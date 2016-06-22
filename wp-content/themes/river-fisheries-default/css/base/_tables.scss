@@ -1,0 +1,117 @@
+table {
+  border-collapse: collapse;
+  margin: ($base-spacing / 2) 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th {
+  border-bottom: 1px solid darken($base-border-color, 15);
+  font-weight: bold;
+  padding: ($base-spacing / 2) 0;
+  text-align: left;
+}
+
+td {
+  border-bottom: $base-border;
+  padding: ($base-spacing / 2) 0;
+}
+
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+/*=============== Spec Tables ===============*/
+
+.spec-table {
+  display: block;
+  width: 100%;
+  //margin:0 0 1em 0;
+  margin-bottom: $baseline*3;
+  background: lighten($light-gray, 12%);
+  //font-size:em(14);
+}
+
+.spec-thead {
+  display: block;
+}
+
+.spec-table-row {
+  display: block;
+  width: 100%;
+  //border-bottom:1px solid $gray;
+}
+
+.spec-colored-rows {
+  .row {
+    &:nth-child(2n+1) {
+      .cell {}
+    }
+  }
+}
+
+.spec-cell {
+  display: block;
+  //background-color:$greylight;
+  border: .2em solid $white;
+  padding: .5em .8em;
+  vertical-align: top;
+  //color:$blue;
+  p {
+    //font-size:.95em;
+    margin: .5em 0;
+  }
+  > ul {
+    margin: .5em 0;
+    > li {
+      margin-bottom: 0 !important;
+      //font-size:.7em;
+      ul {
+        padding: 0 0 0 1.8em;
+      }
+    }
+  }
+  input,
+  select {
+    width: 100%;
+  }
+}
+
+.spec-col {
+  display: table-column;
+}
+
+.spec-col-1 {
+  width: 100%;
+  // border-top:1px solid $light-gray;
+}
+
+.spec-col-2 {
+  width: 100%;
+  // border-top:1px solid $light-gray;
+}
+
+@include mq(medium) {
+  .spec-table {
+    display: table;
+  }
+  .spec-thead {
+    display: table-header-group;
+  }
+  .spec-table-row {
+    display: table-row;
+  }
+  .spec-cell {
+    display: table-cell;
+    p {
+      font-size: em(16);
+    }
+  }
+  .spec-spec-col-1 {
+    width: 30%;
+  }
+  .spec-spec-col-2 {
+    width: 70%;
+  }
+}

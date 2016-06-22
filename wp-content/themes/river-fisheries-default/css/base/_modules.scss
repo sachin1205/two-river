@@ -1,0 +1,418 @@
+.site-wrap {
+  background: $white;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+
+/*=============== Site Header ===============*/
+
+.site-header {
+  
+
+  .inner-wrap {
+    padding-top:0;
+    padding-bottom:0;
+    background-color:$nav-background;
+    max-width:100%;
+    z-index:100;
+    @include transition (background-color .2s ease-in-out);
+  }
+}
+.site-logo {
+  height: $nav-height;
+  line-height:$nav-height;
+  vertical-align: middle;
+  @include span-columns(6 of 12);
+  img {
+    vertical-align: middle;
+    height:em(64);
+    object-fit: contain;
+    @include transition (all .2s ease-in-out);
+  }
+  @include mq(medium) {
+    @include span-columns(3 of 12);
+  }
+}
+.site-nav-container {
+  @include mq(medium) {
+    @include span-columns(7 of 12);
+  }
+}
+.sh-sticky-wrap {
+  @include mq(large) {
+    height: $nav-height;
+    
+    &.stuck {
+
+      .inner-wrap {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color:$base-color;
+        font-size:.875em;
+      }
+    }
+  }
+}
+
+.sh-utility-nav {
+  overflow: hidden;
+  height: $nav-height;
+  .social-wrap {
+    width: 15em;
+    display: none;
+  }
+  @include mq(medium) {
+    text-align: right;
+    float: right;
+    @include span-columns(2 of 12);
+    @include omega;
+    .social-wrap {
+      display: inline-block;
+    }
+  }
+}
+
+.site-search {}
+
+//Site Header Icons
+.sh-icons {
+  float: right;
+  line-height:$nav-height;
+  @include mq(medium) {}
+}
+
+%sh-ico {
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: inline-block;
+  text-indent:-999999em;
+  width: 2em;
+  height:2em;
+  line-height:2em;
+  margin-left: 1em;
+  text-align: center;
+  //background-color:red;
+  text-decoration: none;
+  span {
+    font-size: .75em;
+  }
+  @include mq(medium) {
+    //float:right;
+  }
+}
+
+.sh-ph {
+  margin: 0;
+  i {
+    font-style: normal;
+    //display:none;
+  }
+  @include mq(medium) {
+    font-size: $medium-font-size;
+    i {
+      //display:inline;
+    }
+  }
+}
+
+.sh-ico-search {
+  background-image: url(img/ico-search.svg);
+  @extend %sh-ico;
+}
+.sh-ico-chinese {
+  background-image: url(img/ico-chinese.png);
+  background-size:2.5em;
+  width:3em;
+  @extend %sh-ico;
+}
+
+.sh-ico-menu {
+  background-image: url(img/ico-nav.svg);
+
+  @extend %sh-ico;
+  @include mq(medium) {
+    display: none;
+  }
+}
+
+
+/*=============== Site Intro ===============*/
+.site-header-wrap {
+  background-image:url(img/bg-site-intro.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position:center;
+  
+}
+.site-intro {
+  text-align:center;
+  @extend .dark-module;
+  .inner-wrap {
+    
+    
+  }
+  @include mq(medium) {
+    .inner-wrap {
+    padding-top:$baseline*18;
+    
+  }
+  }
+  @include mq(large) {
+    .inner-wrap {
+    padding-top:$baseline*18;
+    
+  }
+  }
+}
+// .page-intro {
+//   text-align:center;
+//   @extend .dark-module;
+//   @include mq(large) {
+//     padding-bottom:$baseline*6;
+//     padding-top:$baseline*6;
+//   }
+// }
+.si-h1 {
+  @include display-font-size;
+  color:$white;
+ @include mq(medium) {
+   margin-bottom:2em;
+ }
+  @include mq(large) {
+   margin-bottom:2em;
+ }
+}
+.si-subtext {
+  @include large-font-size;
+   @include alternate-font-family;
+}
+.si-scroll {
+  color:$white;
+  text-decoration: none;
+  font-family:$alternate-font-family;
+  font-size:$medium-font-size;
+  background-image:url(img/ico-red-arrow-down.svg);
+  background-repeat:no-repeat;
+  background-position:bottom center;
+  padding-bottom:2em;
+  background-size:1.5em;
+  display:block;
+  @include mq(medium) {
+    font-size:$large-font-size;
+  }
+}
+/*=============== Site Content ===============*/
+
+//Layout formatting is in patterns.scss
+.site-content {}
+
+.site-content-primary {}
+
+.site-content-secondary {}
+.scs-nav {
+  a {
+    display:block;
+    @include small-font-size;
+    //background-color:lighten($light-gray, 3%);
+    border-top:$base-border;
+    padding:$baseline;
+    margin-bottom:em(2);
+    color:$blue;
+    text-decoration: none;
+
+  }
+}
+
+/*=============== Recipe Slider ===============*/
+.dark-module {
+  color:$white !important;
+
+ .inner-wrap {
+    > *, h1, h2, h3, h4, h5 {
+    color:$white !important;
+  }
+  }
+  a {
+    color:$white !important;
+    &:hover {
+      color:$red !important;
+    }
+  }
+
+}
+.pseudo-header {
+  font-family:$alternate-font-family;
+  font-size:$large-font-size;
+}
+.rs-item {
+@extend .dark-module;
+  background-size:cover;
+  background-repeat: no-repeat;
+  h1 {
+    text-align:right;
+  }
+}
+.rs-item-first {
+  @extend .rs-item;
+  background-image:url(img/bg-recipes.jpg);
+}
+.rs-item-second {
+  @extend .rs-item;
+  background-image:url(img/bg-site-intro.jpg);
+}
+
+
+.link-arrow {
+  display:inline-block;
+  font-family:$alternate-font-family;
+  font-size:$medium-font-size;
+  text-decoration: none;
+  background-image:url(img/ico-red-arrow-right.svg);
+  background-repeat: no-repeat;
+  background-position:bottom right;
+  padding-right:2em;
+}
+.section-spacing {
+  @include mq(medium) {
+  margin-bottom:$baseline*15;
+  }
+  @include mq(large) {
+    margin-bottom:$baseline*24;
+  }
+}
+/*=============== Site Footer ===============*/
+
+.site-footer {
+  background-color: $base-color;
+  text-align: center;
+  color: $white;
+  p {
+    color:$gray;
+    @include small-font-size;
+  }
+  a {
+    color:$white;
+    &:hover {
+      color:$red;
+    }
+  }
+}
+
+.sf-small {
+  background-color: $medium-gray;
+  text-align: center;
+  .inner-wrap {
+    padding-top: $baseline*2;
+    padding-bottom: $baseline*2;
+  }
+}
+
+//This removes the blank space Webtrax adds to the footer
+img[name=pphLoggerImage] {
+  display: none;
+}
+
+
+/*=============== Search ===============*/
+
+.search-table {
+  display: table;
+  width: 100%;
+  float: right;
+  padding: 0;
+}
+
+.search-row {
+  display: table-row;
+  width: 100%;
+}
+
+.search-cell1 {
+  display: table-cell;
+  padding-right: 0.4375em;
+}
+
+.search-cell2 {
+  display: table-cell;
+  width: 2.1875em;
+  border: 0;
+}
+
+.search-text {
+  font-size: .8em;
+  width: 100%;
+  height: 2.3em;
+  border: 1px solid red;
+  float: left;
+  padding-left: .5em;
+  margin-bottom: 0 !important;
+}
+
+.search-submit {
+  width: 100%;
+  height: 2.3em;
+  border: 0;
+  float: right;
+  background: url(img/ico-search.svg) no-repeat center center !important;
+}
+
+.no-svg {
+  .search-submit {
+    background: url(img/ico-search.png) no-repeat center center !important;
+  }
+}
+
+@include mq(medium) {
+  .site-search {
+    width: 100%;
+  }
+  .search-text {
+    height: 2.3em;
+  }
+  .search-submit {
+    height: 2.3em;
+  }
+}
+
+@include mq(large) {
+  .search {}
+  .search-text {}
+}
+
+.search-module {
+  background-color: $base-color;
+  height: 6em;
+  margin-top: -6em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.47);
+  position: fixed;
+  left:0;
+  right:0;
+  z-index: 10000;
+  @include transition (all .2s ease-in-out);
+  &.active {
+    margin-top: 0;
+  }
+  .inner-wrap {
+    padding: 0.3em 1.5em 1em;
+  }
+}
+
+.search-exit {
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  //position:absolute;
+  top: 0;
+  right: 0;
+}
+
+/*=============== About Module ===============*/
+.about-module {
+  @extend %img-bg;
+  background-image:url(img/bg-about.jpg);
+
+}
