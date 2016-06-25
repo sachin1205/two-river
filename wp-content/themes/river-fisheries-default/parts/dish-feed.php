@@ -1,7 +1,3 @@
-<section id="products" class="product-section">
-         <div class="inner-wrap">
-        <div class="product-grid rows-of-3">
-
 <?php
 //global $wp_query;
 //$cat_ID = get_the_category($pageID);
@@ -9,16 +5,17 @@
 //$this_page = $pageID;
 //query_posts(array('cat' => $cat_ID, 'post__not_in' => array($this_post), 'posts_per_page' => 3, 'orderby' => 'rand'));
 $args = array (
-  'posts_per_page' => '9',
+  //'posts_per_page' => '3',
   'post_type' => 'page',
   //'post__not_in' => array($this_page),
   'order' => 'ASC',
   'orderby' => 'rand',
-  'cat' => array(3,4)
+  'cat' => '4'
 );
 $query = new WP_Query( $args );
 ?>
       
+   <div class="product-grid rows-of-3">
 <?php
 if ( $query->have_posts() ) {
   while ( $query->have_posts() ) {
@@ -27,8 +24,8 @@ if ( $query->have_posts() ) {
 
  <a href="<?php the_permalink(); ?>" class="product-grid-item">
         <?php if ( has_post_thumbnail()) : ?>
-<?php //the_post_thumbnail(); ?>
 <?php the_post_thumbnail('post-thumbnail', array( 'class' => "product-grid-item-img")); ?>
+
 <?php endif; ?>
    <header class="product-grid-item-header-wrap">
               <h2 class="product-grid-item-header"><?php the_title(); ?></h2>
@@ -45,10 +42,4 @@ if ( $query->have_posts() ) {
 
 
           
-       
-
-
-
-          
-          </div></div>
-       </section>
+        </div>

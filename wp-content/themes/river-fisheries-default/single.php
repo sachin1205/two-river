@@ -13,7 +13,7 @@
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 <!--Site Content-->
-	<section class="site-content" role="main">
+	<section class="site-content two-column" role="main">
 	    <div class="inner-wrap">
 	    	<h1><?php the_title(); ?></h1>
 	        <article class="site-content-primary">
@@ -25,7 +25,7 @@
 				<hr>
 				<?php comments_template( '', true ); ?>
 	        </article>
-	       	<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/sidebar-blog','parts/shared/sidebar','parts/shared/flexible-content'  ) ); ?>
+	       	<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/sidebar-blog','parts/shared/flexible-content'  ) ); ?>
 	    </div>
 	</section>
 <?php endwhile; ?>

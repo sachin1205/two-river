@@ -40,6 +40,7 @@
 			<h1>No posts to display</h1>	
 		<?php endif; ?>
 	<?php wp_pagenavi(); ?>
+	
 	</div>
 </section>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>

@@ -21,10 +21,10 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 	<!--Site Content-->
-	<section class="site-content two-column" role="main">
+	<section class="site-content" role="main">
 	    <div class="inner-wrap">
 
-	        <article class="site-content-primary col-9"> 
+	        <article class="site-content-primary"> 
 	        	<?php the_content(); ?> 
 						<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/flexible-content' ) ); ?>
 						<?php if (is_page( '9' )) : ?>
@@ -40,10 +40,19 @@
 						    );
 						    ?>
 						   </ul>
-						<?php endif; ?>                    
+						<?php endif; ?>     
+						<?php if (is_page( '997' )) : ?>
+						<?php Starkers_Utilities::get_template_parts( array( 'parts/fish-feed' ) ); ?>	
+						<?php endif; ?>  
+						<?php if (is_page( '999' )) : ?>
+						<?php Starkers_Utilities::get_template_parts( array( 'parts/dish-feed' ) ); ?>	
+						<?php endif; ?>   
+						<?php if (is_page( '1095' )) : ?>
+						<?php Starkers_Utilities::get_template_parts( array( 'parts/products-module' ) ); ?>	
+						<?php endif; ?>                  
 	        </article>
 	        
-				<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/sidebar' ) ); ?>
+				<?php //Starkers_Utilities::get_template_parts( array( 'parts/shared/sidebar' ) ); ?>
 			
 
 		</div>

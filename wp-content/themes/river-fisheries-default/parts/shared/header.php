@@ -41,7 +41,7 @@
       </div>
       <!--inner-wrap END-->
     </header>
-<?php if(is_home() || is_front_page()): ?>
+<?php if(is_front_page()): ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/home-si-module' ) ); ?>
 <?php else: ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/dest-si-module' ) ); ?>

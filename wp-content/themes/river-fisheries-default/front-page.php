@@ -13,8 +13,7 @@
 <?php Starkers_Utilities::get_template_parts( array( 'parts/products-module' ) ); ?>   
 
 <?php Starkers_Utilities::get_template_parts( array( 'parts/recipe-module' ) ); ?>   
-
-<?php Starkers_Utilities::get_template_parts( array( 'parts/about-module' ) ); ?>   
+  
 
 
 

@@ -34,8 +34,9 @@
 	        </article>
 	        
 	
-			
-
+			<?php if(is_page('980')) : ?>
+<?php Starkers_Utilities::get_template_parts( array( 'parts/fish-slider' ) ); ?>
+<?php endif; ?>
 		</div>
 	</section>
 

@@ -1,5 +1,5 @@
 <!--Secondary Content-->
-<aside class="site-content-secondary">
+<aside class="site-content-secondary col-3">
 <h4>Recent Posts</h4>
 <ul>
 <?php wp_get_archives('type=postbypost&limit=5'); ?>
